@@ -18,8 +18,12 @@ sudoCMD="sudo -H -u builder"
 
 # Do Stuff
 echo "someInputName: ${INPUT_SOMEINPUTNAME:-nul}"
-
 echo "someOtherInputName: ${INPUT_SOMEOTHERINPUTNAME:-nul}"
+echo "multipleInputs: ${INPUT_MULTIPLEINPUTS:-nul}"
+
+for i in "${INPUT_MULTIPLEINPUTS[@]}"; do
+    echo "${i}"
+done
 
 touch rootFile
 ls -l rootFile
@@ -27,9 +31,7 @@ ${sudoCMD} touch userFile
 ls -l userFile
 
 echo "someOutputName=${INPUT_SOMEINPUTNAME:-nul}" >>$GITHUB_OUTPUT
+echo "someOtherInputName=${INPUT_SOMEOTHERINPUTNAME:-nul}" >>$GITHUB_OUTPUT
 
 files=($(ls))
-echo ${files[1]}
-echo ${files[2]}
-
-echo "someOtherOutputName=${files[@]}" >>$GITHUB_OUTPUT
+echo "multipleOutputs=${files[@]}" >>$GITHUB_OUTPUT

@@ -13,10 +13,16 @@ inputs:
     description: ""
     required: false
     default: ""
+  multipleInputs:
+    description: ""
+    required: false
+    default: ""
 outputs:
   someOutputName:
     description: ""
   someOtherOutputName:
+    description: ""
+  multipleOutputs:
     description: ""
 runs:
   using: 'docker'
