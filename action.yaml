@@ -1,0 +1,17 @@
+name: ArchLinux Boiler Action
+author: Nick Marshall
+description: ""
+branding:
+  color: blue
+  icon: chevron-up
+inputs:
+  someInputName:
+    description: ""
+    required: false
+    default: ""
+outputs:
+  someOutputName:
+    description: ""
+runs:
+  using: 'docker'
+  image: 'Dockerfile'   
