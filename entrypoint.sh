@@ -19,9 +19,13 @@ sudoCMD="sudo -H -u builder"
 # Do Stuff
 echo "someInputName: ${INPUT_SOMEINPUTNAME:-nul}"
 echo "someOtherInputName: ${INPUT_SOMEOTHERINPUTNAME:-nul}"
-echo "multipleInputs: ${INPUT_MULTIPLEINPUTS:-nul}"
 
-for i in "${INPUT_MULTIPLEINPUTS[@]}"; do
+echo "multipleInputs: ${INPUT_MULTIPLEINPUTS:-1 2 3}"
+readarray -td ' ' multipleInputs < <(awk '{ gsub(/, /,"\0"); print; }' <<<"${INPUT_MULTIPLEINPUTS:-1 2 3}, ")
+unset 'multipleInputs[-1]'
+declare -p multipleInputs
+
+for i in "${multipleInputs[@]}"; do
     echo "${i}"
 done
 
