@@ -18,8 +18,14 @@ sudoCMD="sudo -H -u builder"
 
 # Do Stuff
 echo "someInputName: ${INPUT_SOMEINPUTNAME:-nul}"
+
+echo ${INPUT_SOMEOTHERINPUTNAME:-nul}
+
 touch ROOT
 ls -l ROOT
 ${sudoCMD} touch USER
 ls -l USER
+
 echo "someOutputName=${INPUT_SOMEINPUTNAME:-nul}" >>$GITHUB_OUTPUT
+
+echo "someOtherOutputName=$(ls)" >>$GITHUB_OUTPUT

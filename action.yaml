@@ -9,8 +9,14 @@ inputs:
     description: ""
     required: false
     default: ""
+  someOtherInputName:
+    description: ""
+    required: false
+    default: ""
 outputs:
   someOutputName:
+    description: ""
+  someOtherOutputName:
     description: ""
 runs:
   using: 'docker'
