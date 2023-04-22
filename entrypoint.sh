@@ -19,7 +19,7 @@ sudoCMD="sudo -H -u builder"
 # Do Stuff
 echo "someInputName: ${INPUT_SOMEINPUTNAME:-nul}"
 
-echo ${INPUT_SOMEOTHERINPUTNAME:-nul}
+echo "someOtherInputName: ${INPUT_SOMEOTHERINPUTNAME:-nul}"
 
 touch ROOT
 ls -l ROOT
