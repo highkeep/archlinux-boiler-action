@@ -28,4 +28,4 @@ ls -l userFile
 
 echo "someOutputName=${INPUT_SOMEINPUTNAME:-nul}" >>$GITHUB_OUTPUT
 
-echo "someOtherOutputName=$(ls)" >>$GITHUB_OUTPUT
+echo "someOtherOutputName=($(ls))" >>$GITHUB_OUTPUT
