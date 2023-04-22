@@ -21,10 +21,10 @@ echo "someInputName: ${INPUT_SOMEINPUTNAME:-nul}"
 
 echo "someOtherInputName: ${INPUT_SOMEOTHERINPUTNAME:-nul}"
 
-touch ROOT
-ls -l ROOT
-${sudoCMD} touch USER
-ls -l USER
+touch rootFile
+ls -l rootFile
+${sudoCMD} touch userFile
+ls -l userFile
 
 echo "someOutputName=${INPUT_SOMEINPUTNAME:-nul}" >>$GITHUB_OUTPUT
 
