@@ -32,4 +32,4 @@ files=($(ls))
 echo ${files[1]}
 echo ${files[2]}
 
-echo "someOtherOutputName=${files}" >>$GITHUB_OUTPUT
+echo "someOtherOutputName=${files[@]}" >>$GITHUB_OUTPUT
